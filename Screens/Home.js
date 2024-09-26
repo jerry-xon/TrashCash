@@ -3,6 +3,7 @@ import React from "react";
 import { Avatar, Button,Card } from "react-native-paper";
 import { SafeAreaView } from "react-native";
 import { StyleSheet } from "react-native";
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 const Head = () => {
   return (
@@ -33,8 +34,25 @@ const Head = () => {
   </Card> */}
   <View style={styles.cardcontainer}>
   <Card style={styles.pointcard}>
-      <View>
-        <Text style={{color:"#fff"}}>Your points</Text>
+      <View  style={styles.pointcardcontent}>
+       <Avatar.Image size={52} source={require("../assets/avatar.png")} />
+       <View style={{paddingHorizontal:12,rowGap:8}}>
+        <Text style={{color:"#fff",fontSize:16,fontWeight:400}}>Your points</Text>
+        <Text style={{color:"#fff",fontWeight:600,fontSize:24}}>7500</Text>
+       </View>
+      </View>
+      <View style={{paddingHorizontal:16,paddingVertical:12}}>
+      <Text style={styles.nametext}>Harry Freeman</Text>
+      </View>
+      <View style={{paddingHorizontal:16,paddingVertical:16,flexDirection:'row',columnGap:12}}>
+        <Pressable style={{borderRadius:24,backgroundColor:'#26D077',paddingHorizontal:12,paddingVertical:8,flexDirection:'row',columnGap:4,alignContent:'center',alignItems:'center'}}>
+        <MaterialCommunityIcons name="cash-check" size={26} color="white" />
+         <Text style={{color:"#fff",fontSize:18,fontWeight:500,}}>Redeem Point</Text>
+        </Pressable>
+        <Pressable style={{borderRadius:24,backgroundColor:'#1B1B25',paddingHorizontal:20,paddingVertical:8,flexDirection:'row',columnGap:8,alignContent:'center',alignItems:'center',borderColor:'white',borderWidth:1}}>
+        <MaterialCommunityIcons name="history" size={24} color="white"/>
+         <Text style={{color:"#fff",fontSize:18,fontWeight:500,}}>History</Text>
+        </Pressable>
       </View>
   </Card>
   </View>
@@ -63,7 +81,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 16,
     backgroundColor: "#65CE64",
-    height: 200,
+    height: 240,
   },
   hellotext: {
     fontSize: 16,
@@ -83,8 +101,19 @@ const styles = StyleSheet.create({
   pointcard:{
     backgroundColor:"#1B1B25",
     padding:8,
+    alignSelf:'center',
+    
   },
   cardcontainer:{
-    paddingHorizontal:16
+    paddingHorizontal:16,
+    position:'absolute',
+    alignSelf:'center',
+    top:160,
+  },
+  pointcardcontent:{
+    paddingVertical:8,
+    paddingHorizontal:16,
+    flexDirection:'row',
+    
   }
 });
