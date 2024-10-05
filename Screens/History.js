@@ -26,27 +26,27 @@ const DetailCard = () => {
           <View style={styles.wasteitems}>
             <Text style={styles.type}>Plastic</Text>
             <Text style={styles.weight}>1.5 kg x ₹25/kg</Text>
-            <Text style={styles.weight}>₹{1.5*25}</Text>
+            <Text style={styles.weight}>₹{1.5 * 25}</Text>
           </View>
           <View style={styles.wasteitems}>
             <Text style={styles.type}>Rubber</Text>
             <Text style={styles.weight}>.5 kg x ₹10/kg</Text>
-            <Text style={styles.weight}>₹{.5*10}</Text>
+            <Text style={styles.weight}>₹{0.5 * 10}</Text>
           </View>
           <View style={styles.wasteitems}>
             <Text style={styles.type}>Ewaste</Text>
             <Text style={styles.weight}>.2 kg x ₹200/kg</Text>
-            <Text style={styles.weight}>₹{.2*200}</Text>
+            <Text style={styles.weight}>₹{0.2 * 200}</Text>
           </View>
           <View style={styles.wasteitems}>
             <Text style={styles.type}>Metal</Text>
             <Text style={styles.weight}>.5 kg x ₹40/kg</Text>
-            <Text style={styles.weight}>₹{1*40}</Text>
+            <Text style={styles.weight}>₹{1 * 40}</Text>
           </View>
           <View style={styles.wasteitems}>
             <Text style={styles.type}>Glass</Text>
             <Text style={styles.weight}>.5 kg x ₹12/kg</Text>
-            <Text style={styles.weight}>₹{.5*12}</Text>
+            <Text style={styles.weight}>₹{0.5 * 12}</Text>
           </View>
         </View>
       </View>
@@ -116,9 +116,11 @@ const styles = StyleSheet.create({
     borderColor: "#e0e0e0",
     borderRadius: 10,
     padding: 16,
+    
   },
   cardcontainer: {
     paddingHorizontal: 16,
+    paddingVertical:12
   },
   cardtitle: {
     fontSize: 20,
@@ -169,12 +171,13 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     color: "#78797B",
   },
-  wasteitems:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  wasteitems: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
-  itemlistcontainer:{
-    paddingVertical:12,
-    rowGap:4
-  }
+  itemlistcontainer: {
+    paddingVertical: 12,
+    rowGap: 4,
+
+  },
 });
