@@ -16,10 +16,38 @@ const DetailCard = () => {
           <Text style={styles.dateText}>Date</Text>
           <Text style={styles.date}>Wednesday, July 3,2024</Text>
         </View>
+        <View style={{ borderWidth: 1, borderColor: "#e0e0e0" }} />
         <View style={styles.WasteDetails}>
           <Text style={styles.type}>Type of Waste</Text>
           <Text style={styles.weight}>Waste Weight x Price</Text>
           <Text style={styles.total}>Total</Text>
+        </View>
+        <View style={styles.itemlistcontainer}>
+          <View style={styles.wasteitems}>
+            <Text style={styles.type}>Plastic</Text>
+            <Text style={styles.weight}>1.5 kg x ₹25/kg</Text>
+            <Text style={styles.weight}>₹{1.5*25}</Text>
+          </View>
+          <View style={styles.wasteitems}>
+            <Text style={styles.type}>Rubber</Text>
+            <Text style={styles.weight}>.5 kg x ₹10/kg</Text>
+            <Text style={styles.weight}>₹{.5*10}</Text>
+          </View>
+          <View style={styles.wasteitems}>
+            <Text style={styles.type}>Ewaste</Text>
+            <Text style={styles.weight}>.2 kg x ₹200/kg</Text>
+            <Text style={styles.weight}>₹{.2*200}</Text>
+          </View>
+          <View style={styles.wasteitems}>
+            <Text style={styles.type}>Metal</Text>
+            <Text style={styles.weight}>.5 kg x ₹40/kg</Text>
+            <Text style={styles.weight}>₹{1*40}</Text>
+          </View>
+          <View style={styles.wasteitems}>
+            <Text style={styles.type}>Glass</Text>
+            <Text style={styles.weight}>.5 kg x ₹12/kg</Text>
+            <Text style={styles.weight}>₹{.5*12}</Text>
+          </View>
         </View>
       </View>
     </View>
@@ -46,6 +74,9 @@ export default function History() {
             <Text style={styles.profileText}>History</Text>
           </View>
         </View>
+        <DetailCard />
+        <DetailCard />
+        <DetailCard />
         <DetailCard />
       </ScrollView>
     </SafeAreaView>
@@ -105,7 +136,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 8,
+    paddingVertical: 12,
   },
   dateText: {
     fontSize: 16,
@@ -121,6 +152,7 @@ const styles = StyleSheet.create({
   WasteDetails: {
     flexDirection: "row",
     justifyContent: "space-between",
+    paddingTop: 12,
   },
   type: {
     fontSize: 16,
@@ -137,4 +169,12 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     color: "#78797B",
   },
+  wasteitems:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  itemlistcontainer:{
+    paddingVertical:12,
+    rowGap:4
+  }
 });
