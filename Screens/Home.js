@@ -5,6 +5,7 @@ import { SafeAreaView } from "react-native";
 import { StyleSheet } from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 const Head = () => {
   return (
@@ -22,7 +23,11 @@ const Head = () => {
         </Pressable>
       </View>
       <View style={styles.cardcontainer}>
+        
         <View style={styles.pointcard}>
+          <View style={{position:'absolute',right:0,left:220,bottom:70,top:10,opacity: 0.2,}}>
+        <FontAwesome5 name="recycle" size={120} color="#D9D9D9" />
+          </View>
           <View style={styles.pointcardcontent}>
             <Avatar.Image size={52} source={require("../assets/avatar.png")} />
             <View style={{ paddingHorizontal: 12, rowGap: 8 }}>
@@ -142,7 +147,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 16,
-    backgroundColor: "#65CE64",
+    backgroundColor: "#26D077",
     height: 240,
   },
   hellotext: {
