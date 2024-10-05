@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Pressable,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import { Avatar, Button, Card } from "react-native-paper";
@@ -11,7 +12,7 @@ import { StyleSheet } from "react-native";
 import Feather from "@expo/vector-icons/Feather";
 import { Ionicons } from "@expo/vector-icons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
 const Userdetails = () => {
   return (
@@ -95,26 +96,34 @@ const AccountDetails = () => {
 };
 
 export default function Profile() {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
-        <View style={{flexDirection:'row',paddingHorizontal:16,paddingTop:12}}>
-      <View>
-        <Pressable
-          onPress={() => {
-            navigation.goBack();
+      <ScrollView>
+        <View
+          style={{
+            flexDirection: "row",
+            paddingHorizontal: 16,
+            paddingTop: 12,
           }}
-          style={styles.backbutton}
         >
-          <Ionicons name="arrow-back" size={24} color="black" />
-        </Pressable>
-      </View>
-      <View style={{width:"75%"}}>
-        <Text style={styles.profileText}>Profile</Text>
-      </View>
+          <View>
+            <Pressable
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={styles.backbutton}
+            >
+              <Ionicons name="arrow-back" size={24} color="black" />
+            </Pressable>
+          </View>
+          <View style={{ width: "75%" }}>
+            <Text style={styles.profileText}>Profile</Text>
+          </View>
         </View>
-      <Userdetails />
-      <AccountDetails />
+        <Userdetails />
+        <AccountDetails />
+      </ScrollView>
     </SafeAreaView>
   );
 }

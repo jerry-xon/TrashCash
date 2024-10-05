@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Pressable } from "react-native";
+import { View, Text, SafeAreaView, Pressable, ScrollView } from "react-native";
 import { React } from "react";
 import { StyleSheet } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -17,9 +17,9 @@ const DetailCard = () => {
           <Text style={styles.date}>Wednesday, July 3,2024</Text>
         </View>
         <View style={styles.WasteDetails}>
-            <Text style={styles.type}>Type of Waste</Text>
-            <Text style={styles.weight}>Waste Weight x Price</Text>
-            <Text style={styles.total}>Total</Text>
+          <Text style={styles.type}>Type of Waste</Text>
+          <Text style={styles.weight}>Waste Weight x Price</Text>
+          <Text style={styles.total}>Total</Text>
         </View>
       </View>
     </View>
@@ -30,22 +30,24 @@ export default function History() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.screenBG}>
-      <View style={styles.head}>
-        <View>
-          <Pressable
-            onPress={() => {
-              navigation.goBack();
-            }}
-            style={styles.backbutton}
-          >
-            <Ionicons name="arrow-back" size={24} color="black" />
-          </Pressable>
+      <ScrollView>
+        <View style={styles.head}>
+          <View>
+            <Pressable
+              onPress={() => {
+                navigation.goBack();
+              }}
+              style={styles.backbutton}
+            >
+              <Ionicons name="arrow-back" size={24} color="black" />
+            </Pressable>
+          </View>
+          <View style={styles.historycontainer}>
+            <Text style={styles.profileText}>History</Text>
+          </View>
         </View>
-        <View style={styles.historycontainer}>
-          <Text style={styles.profileText}>History</Text>
-        </View>
-      </View>
-      <DetailCard />
+        <DetailCard />
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -116,24 +118,23 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "#000",
   },
-  WasteDetails:{
-    flexDirection:'row',
-    justifyContent:'space-between',
+  WasteDetails: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
-  type:{
+  type: {
     fontSize: 16,
     fontWeight: "400",
     color: "#78797B",
   },
-  weight:{
+  weight: {
     fontSize: 16,
     fontWeight: "400",
     color: "#78797B",
   },
-  total:{
+  total: {
     fontSize: 16,
     fontWeight: "400",
     color: "#78797B",
-  }
-
+  },
 });

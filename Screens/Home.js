@@ -1,11 +1,18 @@
-import { View, Text, Pressable, StatusBar, Image } from "react-native";
+import {
+  View,
+  Text,
+  Pressable,
+  StatusBar,
+  Image,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import { Avatar, Button, Card } from "react-native-paper";
 import { SafeAreaView } from "react-native";
 import { StyleSheet } from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 
 const Head = () => {
   return (
@@ -23,10 +30,18 @@ const Head = () => {
         </Pressable>
       </View>
       <View style={styles.cardcontainer}>
-        
         <View style={styles.pointcard}>
-          <View style={{position:'absolute',right:0,left:220,bottom:70,top:10,opacity: 0.2,}}>
-        <FontAwesome5 name="recycle" size={120} color="#D9D9D9" />
+          <View
+            style={{
+              position: "absolute",
+              right: 0,
+              left: 220,
+              bottom: 70,
+              top: 10,
+              opacity: 0.2,
+            }}
+          >
+            <FontAwesome5 name="recycle" size={120} color="#D9D9D9" />
           </View>
           <View style={styles.pointcardcontent}>
             <Avatar.Image size={52} source={require("../assets/avatar.png")} />
@@ -106,19 +121,21 @@ const Service_menu = () => {
           onPress={() => console.log("Pressed")}
           style={styles.servicebutton}
         >
-          <View style={{flexDirection:'row',columnGap:4 }}>
-          <Image
-            source={require("../assets/service.png")}
-            style={{ width: 60, height: 60, top: 4 }}
-          />
-          <View style={{ padding: 8, rowGap: 8 }}>
-            <Text style={{ fontSize: 16, fontWeight: 500 }}>Waste Deposit</Text>
-            <Text style={{ fontSize: 16, fontWeight: 300, color: "#6B6F72" }}>
-              Earn your points
-            </Text>
+          <View style={{ flexDirection: "row", columnGap: 4 }}>
+            <Image
+              source={require("../assets/service.png")}
+              style={{ width: 60, height: 60, top: 4 }}
+            />
+            <View style={{ padding: 8, rowGap: 8 }}>
+              <Text style={{ fontSize: 16, fontWeight: 500 }}>
+                Waste Deposit
+              </Text>
+              <Text style={{ fontSize: 16, fontWeight: 300, color: "#6B6F72" }}>
+                Earn your points
+              </Text>
+            </View>
           </View>
-          </View>
-          <View style={{alignSelf:'center'}}>
+          <View style={{ alignSelf: "center" }}>
             <AntDesign name="right" size={24} color="black" />
           </View>
         </Pressable>
@@ -131,8 +148,10 @@ export default function Home() {
   return (
     <>
       <SafeAreaView style={styles.ScreenBG}>
-        <Head />
-        <Service_menu />
+        <ScrollView>
+          <Head />
+          <Service_menu />
+        </ScrollView>
       </SafeAreaView>
     </>
   );
